@@ -1,0 +1,8 @@
+add localstorage so books stay
+
+add ability to change status form wishlist to completed
+
+add ability to add rating to completed
+
+
+
