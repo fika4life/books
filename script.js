@@ -43,14 +43,18 @@ function handleSubmit(e) {
 //for every item in books array, create li item and append to ul wishlist
 
 function populateWishlist() {
+  wishListEl.innerHTML = '';
+
   books.forEach((book) => {
+    //remove current list
+
     // create li item
     let wishlistItemEl = document.createElement('div');
 
     wishlistItemEl.classList.add('wishlistItem');
 
     //add book data to div
-    wishlistItemEl.innerHTML = `<h4>${book.name}</h4><p>${book.author}</p>`;
+    wishlistItemEl.innerHTML = `<h6>${book.name}</h6><p>${book.author}</p>`;
 
     wishListEl.appendChild(wishlistItemEl);
   });

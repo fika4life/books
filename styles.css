@@ -1,0 +1,38 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  display: flex;
+  margin: 2rem 1rem;
+  width: 90vw;
+}
+
+section {
+  width: 30%;
+  margin-left: 4rem;
+}
+
+.form-controls {
+  margin-bottom: 0.5rem;
+}
+
+.form-controls label {
+  font-size: 1.1rem;
+}
+
+input[type='text'] {
+  /* height: 1.7rem; */
+  border: 1px solid lightgray;
+}
+
+.content h6 {
+  margin-bottom: 0.3rem;
+}
+.wishlistItem {
+  margin-top: 1rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid lightgrey;
+}

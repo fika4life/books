@@ -4,56 +4,78 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css"
+    />
+    <link rel="stylesheet" href="styles.css" />
+
     <title>Books Tracker</title>
   </head>
   <body>
-    <div class="container">
+    <div class="content">
       <h1>Books Tracker</h1>
-      <section>
-        <h2>Add Book</h2>
-        <form id="bookForm">
-          <div class="form-controls">
-            <label for="bookName">Book Name</label>
-            <input
-              type="text"
-              name="bookName"
-              id="bookName"
-              autocomplete="off"
-            />
-          </div>
-          <div class="form-controls">
-            <label for="Author">Author</label>
-            <input type="text" name="author" id="author" autocomplete="off" />
-          </div>
-          <div class="form-controls">
-            <p>Status</p>
-            <input
-              type="radio"
-              name="status"
-              id="wishlist"
-              value="wishlist"
-              checked
-            />
-            <label for="wishlist">Wish List</label>
-            <input
-              type="radio"
-              name="status"
-              id="completed"
-              value="completed"
-            />
-            <label for="completed">Completed</label>
-          </div>
-          <button type="submit">Submit</button>
-        </form>
-      </section>
-      <section>
-        <h2>Wish List</h2>
-        <div id="wishlistContainer"></div>
-      </section>
-      <section>
-        <h2>Completed</h2>
-      </section>
+      <div class="container">
+        <section>
+          <h2>Add Book</h2>
+          <form id="bookForm">
+            <div class="field">
+              <label for="bookName">Book Name</label>
+              <div class="control">
+                <input
+                  class="input"
+                  type="text"
+                  name="bookName"
+                  id="bookName"
+                  autocomplete="off"
+                />
+              </div>
+            </div>
+            <div class="field">
+              <label for="Author">Author</label>
+              <div class="control">
+                <input
+                  class="input"
+                  type="text"
+                  name="author"
+                  id="author"
+                  autocomplete="off"
+                />
+              </div>
+            </div>
+            <div class="field">
+              <p>Status</p>
+              <div class="control">
+                <input
+                  type="radio"
+                  name="status"
+                  id="wishlist"
+                  value="wishlist"
+                  checked
+                />
+
+                <label class="radio" for="wishlist">Wish List</label>
+                <input
+                  type="radio"
+                  name="status"
+                  id="completed"
+                  value="completed"
+                />
+
+                <label class="radio" for="completed">Completed</label>
+              </div>
+            </div>
+            <button class="button" type="submit">Submit</button>
+          </form>
+        </section>
+        <section>
+          <h2>Wish List</h2>
+          <div id="wishlistContainer"></div>
+        </section>
+        <section>
+          <h2>Completed</h2>
+        </section>
+      </div>
     </div>
     <script src="script.js"></script>
   </body>
