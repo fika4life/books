@@ -1,4 +1,4 @@
-add localstorage so books stay
+delete from wishlist https://stackoverflow.com/questions/57086355/remove-item-from-local-storage
 
 add ability to change status form wishlist to completed
 
@@ -6,3 +6,5 @@ add ability to add rating to completed
 
 
 
+DONE
+add localstorage so books stay

@@ -4,6 +4,8 @@ const authorEl = document.getElementById('author');
 
 const wishListEl = document.getElementById('wishlistContainer');
 
+let deleteBtn;
+
 let books;
 // if there is something in localstorage populateWishlist with data
 if (JSON.parse(localStorage.getItem('books'))) {
@@ -67,10 +69,22 @@ function populateWishlist() {
     wishlistItemEl.classList.add('wishlistItem');
 
     //add book data to div
-    wishlistItemEl.innerHTML = `<h6>${book.name}</h6><p>${book.author}</p>`;
+    wishlistItemEl.innerHTML = `<div class="wishlistItemText"><h6>${book.name}</h6><p>${book.author}</p></div><button class="button is-danger is-small is-light" id="deleteBtn">Delete</button>`;
 
     wishListEl.appendChild(wishlistItemEl);
+
+    //add eventlisteners to dynamically created buttons
+    deleteBtns = document.querySelectorAll('#deleteBtn');
+
+    deleteBtns.forEach((btn) => {
+      btn.addEventListener('click', deleteItem);
+    });
   });
+}
+
+//delete wishlist Item
+function deleteItem(e) {
+  console.log(e.target.parentNode);
 }
 
 bookForm.addEventListener('submit', handleSubmit);
