@@ -1,13 +1,24 @@
-let books = [];
-
 const bookForm = document.getElementById('bookForm');
 const bookNameEl = document.getElementById('bookName');
 const authorEl = document.getElementById('author');
 
 const wishListEl = document.getElementById('wishlistContainer');
 
+let books;
+// if there is something in localstorage populateWishlist with data
+if (JSON.parse(localStorage.getItem('books'))) {
+  populateWishlist();
+} else {
+  books = [];
+}
+
 function handleSubmit(e) {
   e.preventDefault();
+
+  let existing = JSON.parse(localStorage.getItem('books'));
+  if (existing) {
+    books = existing;
+  }
 
   let name = bookNameEl.value;
   let author = authorEl.value;
@@ -19,15 +30,12 @@ function handleSubmit(e) {
     }
   });
 
-  console.log(selectedStatus);
-
   const newBook = {
     name: name,
     author: author,
     status: selectedStatus
   };
 
-  console.log(newBook);
   // adds inputed book to array
   books.push(newBook);
 
@@ -36,6 +44,9 @@ function handleSubmit(e) {
 
   //console.log(books);
   //populate wishlist
+
+  localStorage.setItem('books', JSON.stringify(books));
+
   populateWishlist();
 }
 
@@ -45,7 +56,9 @@ function handleSubmit(e) {
 function populateWishlist() {
   wishListEl.innerHTML = '';
 
-  books.forEach((book) => {
+  booksLS = JSON.parse(localStorage.getItem('books'));
+
+  booksLS.forEach((book) => {
     //remove current list
 
     // create li item
